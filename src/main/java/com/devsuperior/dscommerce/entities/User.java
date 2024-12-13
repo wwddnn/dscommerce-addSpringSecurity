@@ -25,7 +25,6 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "client")
     private List<Order> orders = new ArrayList<>();
 
-
     @ManyToMany
     @JoinTable(name = "tb_user_role",
             joinColumns = @JoinColumn(name = "user_id"),
