@@ -95,7 +95,7 @@ public class User implements UserDetails {
         return orders;
     }
 
-    //6 metodos do UserDetails
+    //6 METODOS DO USER DETAILS
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles;
@@ -126,17 +126,17 @@ public class User implements UserDetails {
         return true;
     }
 
-    //foi adicionado somente o método GET para essa coleção
+    //ADICAO SOMENTE DO METODO GET PARA A COLECAO
     public Set<Role> getRoles() {
         return roles;
     }
 
-    //metodo adicional
+    //METODO ADICIONAL
     public void addRole(Role role) {
         roles.add(role);
     }
 
-    //metodo adicional
+    //METODO ADICIONAL
     public boolean hasRole(String roleName) {
         for(Role r : roles) {
             if(r.getAuthority().equals(roleName)) {

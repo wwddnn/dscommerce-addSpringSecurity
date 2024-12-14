@@ -32,7 +32,7 @@ public class Role implements GrantedAuthority {
         this.id = id;
     }
 
-    //esse metodo também é do GrantedAuthority, alem de ser metodo da classe
+    //O METODO TAMBEM É DO GRANTEDAUTHORITY, ALEM DE SER METODO DA CLASSE
     @Override
     public String getAuthority() {
         return authority;
