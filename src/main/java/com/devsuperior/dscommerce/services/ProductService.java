@@ -1,6 +1,8 @@
 package com.devsuperior.dscommerce.services;
 
+import com.devsuperior.dscommerce.dto.CategoryDTO;
 import com.devsuperior.dscommerce.dto.ProductMinDTO;
+import com.devsuperior.dscommerce.entities.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -74,5 +76,15 @@ public class ProductService {
         entity.setDescription(dto.getDescription());
         entity.setPrice(dto.getPrice());
         entity.setImgUrl(dto.getImgUrl());
+
+        //LIMPA AS CATEGORIAS QUE ESTAVAM ANTES, E VAI COLOCAR SOMENTE AS NOVAS CATEGORIAS. VAI LIMPAR A LISTA QUE TINHA
+        entity.getCategories().clear();
+
+        //ESTA VARRENDO O DTO QUE ESTA CHEGANDO POR JSON, PARA TRANSFORMAR EM ENTITY
+        for (CategoryDTO catDto : dto.getCategories()) {
+            Category cat = new Category();
+            cat.setId(catDto.getId());
+            entity.getCategories().add(cat);
+        }
     }
 }
