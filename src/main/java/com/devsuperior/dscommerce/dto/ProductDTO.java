@@ -26,7 +26,7 @@ public class ProductDTO {
     @NotEmpty(message = "Deve ter pelo menos uma categoria")
     private List<CategoryDTO> categories = new ArrayList<>();
 
-    //ESSE CONSTRUTOR NAO RECEBE AS CATEGORIES INICIALMENTE
+    //nao recebe as categorias inicialmente
     public ProductDTO(Long id, String name, String description, Double price, String imgUrl) {
         this.id = id;
         this.name = name;

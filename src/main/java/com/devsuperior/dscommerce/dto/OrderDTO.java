@@ -15,13 +15,13 @@ public class OrderDTO {
     private Instant moment;
     private OrderStatus status;
 
-    //É OUTRO DTO
+    //outro dto
     private ClientDTO client;
 
-    //É OUTRO DTO
+    //outro dto
     private PaymentDTO payment;
 
-    //É OUTRO DTO
+    //outro dto
     @NotEmpty(message = "Deve ter pelo menos um item")
     private List<OrderItemDTO> items = new ArrayList<>();
 
