@@ -41,7 +41,7 @@ public class UserService implements UserDetailsService {
 		return user;
 	}
 
-	//METODO AUXILIAR PARA RETORNAR UM USUARIO LOGADO
+	//metodo que pega o usuario logado
 	protected User authenticated() {
 
 		try {
