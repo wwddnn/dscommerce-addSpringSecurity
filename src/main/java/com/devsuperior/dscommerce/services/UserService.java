@@ -25,7 +25,6 @@ public class UserService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		
 		List<UserDetailsProjection> result = repository.searchUserAndRolesByEmail(username);
 		if (result.size() == 0) {
 			throw new UsernameNotFoundException("Email not found");
@@ -37,13 +36,11 @@ public class UserService implements UserDetailsService {
 		for (UserDetailsProjection projection : result) {
 			user.addRole(new Role(projection.getRoleId(), projection.getAuthority()));
 		}
-		
 		return user;
 	}
 
 	//metodo que pega o usuario logado
 	protected User authenticated() {
-
 		try {
 			//BUSCA USUARIO LOGADO COM BASE NO CONTEXTO DO TOKEN JWT
 			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
