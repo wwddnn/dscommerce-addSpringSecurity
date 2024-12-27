@@ -1,6 +1,13 @@
 ## 🎯Sobre
-- Esse projeto envolve uma aplicação backend na linguagem Java e Framework Spring boot, sobre um comércio eletrônico.
-Nesse ponto do projeto, foi inserido o Login e controle de acesso, utilizando OAuth2 para autenticação e também o token JWT - Json Web Token.
+- Projeto backend de um e-commerce em Java com Spring boot e Spring Security, com a crição de APIREST e Controle de login e autenticação por OAuth2 e Token JWT. 
+Representa um e-commerce com cadastro de usuários e logins, assim como inserção de produtos e consulta dos produtos listados.
+
+## ✅Conhecimentos adquiridos:
+- Controle de login e acesso com Token JWT 
+- Utilização de OAuth2 JWT password grant
+- Utilização de ByCrypt password encoder
+- Configuração do Postman
+- Utilização de UserDetails, GrantedAuthority e UserDetailsService
 
 ## ↗️Tecnologias 
 - Java
