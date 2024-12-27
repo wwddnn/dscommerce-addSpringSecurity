@@ -13,6 +13,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
+	//metodo usando query nativa com sql raiz, para buscar no banco tanto o user quanto o role.
+	//fizemos no projections alguns metodos, e como o carregamento padrao é lazy, pois é muitos para muitos, resolvemos criar essa consulta para buscar o role tambem no banco alem do user.
 	@Query(nativeQuery = true, value = """
 				SELECT tb_user.email AS username, tb_user.password, tb_role.id AS roleId, tb_role.authority
 				FROM tb_user

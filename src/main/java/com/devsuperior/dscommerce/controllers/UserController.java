@@ -16,7 +16,8 @@ public class UserController {
     @Autowired
     private UserService service;
 
-    //PODE ACESSAR ESSE METODO QUEM TIVER QUALQUER UM DESSES ROLES ABAIXO
+    //metodo que retorna o usuario logado
+    //pode acessar esse metodo quem tiver qualquer um desses roles abaixo
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_CLIENT')")
     @GetMapping(value = "/me")
     public ResponseEntity<UserDTO> getMe() {
